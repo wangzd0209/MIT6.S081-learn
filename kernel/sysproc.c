@@ -6,6 +6,7 @@
 #include "memlayout.h"
 #include "spinlock.h"
 #include "proc.h"
+#include "sysinfo.h"
 
 uint64
 sys_exit(void)
@@ -95,3 +96,36 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+//注册全局mark
+uint64
+sys_trace(void)
+{
+  struct proc *p = myproc();
+
+  argint(0, &(p->mask));
+  
+  return 0;
+}
+
+//sysinfo
+uint64
+sys_sysinfo(void)
+{
+  uint64 uaddr;
+  struct sysinfo info;
+
+  
+  //将freemem和nproc放入
+  info.freemem = cal_freemem();
+  info.nproc = cal_nproc();
+  //传参
+  if (argaddr(0, &uaddr) < 0)
+    return -1;
+    
+  //在复制
+  if(copyout(myproc()->pagetable, uaddr, (char *)&info, sizeof(info)) < 0)
+    return -1;
+  return 0;
+}
+
