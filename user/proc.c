@@ -279,15 +279,14 @@ growproc(int n)
   sz = p->sz;
 
   if(n > 0){
-    if (PGROUNDUP(sz + n) >= PLIC){
-      return -1;
-    }
     if((sz = uvmalloc(p->pagetable, sz, sz + n)) == 0) {
       return -1;
     }
     u2kvmcopy(p->pagetable, p->kernel_pagetable, sz - n, sz);
   } else if(n < 0){
     sz = uvmdealloc(p->pagetable, sz, sz + n);
+    //free_user_pagetable(p->kernel_pagetable);
+    //u2kvmcopy(p->pagetable, p->kernel_pagetable, 0, sz + n);
   }
   p->sz = sz;
   return 0;
