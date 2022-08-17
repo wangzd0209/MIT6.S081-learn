@@ -40,7 +40,7 @@ extern struct cpu cpus[NCPU];
 // trapframe, switch to the user page table, and enter user space.
 // the trapframe includes callee-saved user registers like s0-s11 because the
 // return-to-user path via usertrapret() doesn't return through
-// the entire kernel call stack.
+// the entire kernel all stack.
 struct trapframe {
   /*   0 */ uint64 kernel_satp;   // kernel page table
   /*   8 */ uint64 kernel_sp;     // top of process's kernel stack
