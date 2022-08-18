@@ -1,15 +1,13 @@
 # MIT6.S081-learn
-这是我找到的一些有关于MIT6.S081学习的资料，以及我自己的理解
-
-
-
-
+这是我找到的一些有关于MIT6.S081学习的资料，内部包含相关的lab资料等。
 
 ### 结构
 
 ```
 -Study materials
+--tansaltion
 -Study Notes
+--lab_answer
 ```
 
 ### 说明
