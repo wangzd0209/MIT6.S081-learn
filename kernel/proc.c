@@ -122,11 +122,6 @@ found:
   }
   
   p->kernel_pagetable = ukvminit();
-  if(p->pagetable == 0){
-    freeproc(p);
-    release(&p->lock);
-    return 0;
-  }
 
   //分配一个page
   char *pa = kalloc();
