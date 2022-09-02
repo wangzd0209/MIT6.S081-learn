@@ -5,9 +5,9 @@
 
 ```
 -Study materials
---tansaltion
+--tansaltion  相关指导书等中文翻译
 -Study Notes
---lab_answer
+--lab_answer  lab的记录
 ```
 
 ### 说明
@@ -17,3 +17,11 @@
 ### 联系方式
 
 邮箱：wangzd0209@163.com
+
+### 相关资源网址
+
+- [2020MIT官网](https://pdos.csail.mit.edu/6.828/2020/)
+- [b站视频](https://www.bilibili.com/video/BV19k4y1C7kA?p=1)
+- lab解答博客
+  - https://github.com/duguosheng/6.S081-All-in-one
+  - https://github.com/zhayujie/xv6-labs-2020
